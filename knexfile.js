@@ -1,4 +1,5 @@
 // Update with your config settings.
+require('dotenv').config();
 const path = require('path');
 module.exports = {
   development: {
@@ -15,6 +16,10 @@ module.exports = {
     migrations: {
       directory: path.join(__dirname, 'server', 'db', 'migrations'),
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: path.join(__dirname, 'server', 'db', 'seeds'),
+      tableName: 'knex_seeds'
     }
   },
 
