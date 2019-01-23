@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('time');
     table.string('date');
     table.string('person');
+    table.string('subject');
     table.string('note');
     table.timestamps(true, true);
   });
