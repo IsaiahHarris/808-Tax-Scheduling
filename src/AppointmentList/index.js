@@ -16,7 +16,15 @@ class AppointmentList extends Component {
         {this.props.appointments.map((appointment, i) => {
           return (
             <div key={i} className="appointment-list-container">
-              <Appointment name={appointment.name} />
+              <Appointment
+                name={appointment.name}
+                phone={appointment.phone}
+                time={appointment.time}
+                date={appointment.date}
+                subject={appointment.subject}
+                note={appointment.note}
+                person={appointment.person}
+              />
             </div>
           );
         })}

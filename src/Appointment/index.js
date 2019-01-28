@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Apoointment.scss';
 
-class Appointment extends Component {
-  render() {
-    return (
-      <div className="appointment-container">
-        <div className="name">Name:</div>
-        <div className="phone">Phone:</div>
-        <div className="time">Time:</div>
-        <div className="date">Date:</div>
-        <div className="person">Person:</div>
-        <div className="subject">Subject:</div>
-        <div className="note">Note:</div>
-      </div>
-    );
-  }
-}
+const Appointment = props => {
+  return (
+    <div className="appointment-container">
+      <div className="name">Name: {props.name}</div>
+      <div className="phone">Phone: {props.phone}</div>
+      <div className="time">Time: {props.time}</div>
+      <div className="date">Date: {props.date}</div>
+      <div className="person">Person: {props.person}</div>
+      <div className="subject">Subject: {props.subject}</div>
+      <div className="note">Note: {props.note}</div>
+    </div>
+  );
+};
 
 export default Appointment;
