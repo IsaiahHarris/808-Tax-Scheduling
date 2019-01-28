@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import appoinmentsList from './appointments';
+import appointmentsList from './appointments';
 
 export default combineReducers({
-  appoinmentsList
+  appointmentsList
 });
