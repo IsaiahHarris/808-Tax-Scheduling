@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Appointment from '../Appointment';
 import { loadAppointments } from '../actions';
+import './AppointmentList.scss';
 class AppointmentList extends Component {
   constructor(props) {
     super(props);
@@ -15,17 +16,15 @@ class AppointmentList extends Component {
       <div className="appointment-list-container">
         {this.props.appointments.map((appointment, i) => {
           return (
-            <div key={i} className="appointment-list-container">
-              <Appointment
-                name={appointment.name}
-                phone={appointment.phone}
-                time={appointment.time}
-                date={appointment.date}
-                subject={appointment.subject}
-                note={appointment.note}
-                person={appointment.person}
-              />
-            </div>
+            <Appointment
+              name={appointment.name}
+              phone={appointment.phone}
+              time={appointment.time}
+              date={appointment.date}
+              subject={appointment.subject}
+              note={appointment.note}
+              person={appointment.person}
+            />
           );
         })}
       </div>
