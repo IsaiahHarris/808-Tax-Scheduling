@@ -13,6 +13,7 @@ export const loadAppointments = () => {
 
 export const editApp = data => {
   return dispatch => {
+    console.log(data.id, 'data.id');
     return axios.put(`/api/appointments/${data.id}`, data).then(response => {
       dispatch({ type: EDIT_APP, appointment: response.data });
     });

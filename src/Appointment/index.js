@@ -41,7 +41,11 @@ class Appointment extends Component {
           this.handleOpen();
         }}
       >
-        <div className="appointment" id={this.props.appId} ref={this.myRef}>
+        <div
+          className="appointment"
+          id={this.props.appId || 16}
+          ref={this.myRef}
+        >
           <div className="name">
             Name: <div className="desc">{this.props.name}</div>
           </div>

@@ -49,7 +49,7 @@ router
   });
 
 router.put('/:id', (req, res) => {
-  const id = req.params.id;
+  const id = Number(req.params.id);
 
   return new Appointment({ id })
     .save(

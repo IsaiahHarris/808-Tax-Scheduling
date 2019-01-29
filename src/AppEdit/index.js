@@ -41,37 +41,58 @@ class AppEdit extends Component {
       <div className="item-edit-container">
         {true && (
           <div className="item-edit-form">
-            <input
-              type="text"
-              name="nameInput"
-              id="name"
-              value={this.state.nameInput}
-              onChange={this.handleInputChange('nameInput')}
-            />
-            <input
-              type="text"
-              name="phoneInput"
-              id="phone"
-              value={this.state.phoneInput}
-              onChange={this.handleInputChange('phoneInput')}
-            />
-            <input
-              type="text"
-              name="subjectInput"
-              id="subject"
-              value={this.state.subjectInput}
-              onChange={this.handleInputChange('subjectInput')}
-            />
-            <input
-              type="text"
-              name="noteInput"
-              id="note"
-              value={this.state.noteInput}
-              onChange={this.handleInputChange('noteInput')}
-            />
+            <div className="input">
+              {/* <div className="label">Name:</div> */}
+              <input
+                type="text"
+                name="nameInput"
+                id="name"
+                value={this.state.nameInput}
+                onChange={this.handleInputChange('nameInput')}
+                placeholder="Name"
+                autoComplete="off"
+              />
+            </div>
+            <div className="input">
+              {/* <div className="label">Phone:</div> */}
+              <input
+                type="text"
+                name="phoneInput"
+                id="phone"
+                value={this.state.phoneInput}
+                onChange={this.handleInputChange('phoneInput')}
+                placeholder="Phone"
+                autoComplete="off"
+              />
+            </div>
+            <div className="input">
+              {/* <div className="label">Subject:</div> */}
+              <input
+                type="text"
+                name="subjectInput"
+                id="subject"
+                value={this.state.subjectInput}
+                onChange={this.handleInputChange('subjectInput')}
+                placeholder="Subject"
+                autoComplete="off"
+              />
+            </div>
+            <div className="input">
+              {/* <div className="label">Note:</div> */}
+              <input
+                type="text"
+                name="noteInput"
+                id="note"
+                value={this.state.noteInput}
+                onChange={this.handleInputChange('noteInput')}
+                placeholder="Note"
+                autoComplete="off"
+              />
+            </div>
             <div className="edit-app-button">
               <div
                 onClick={() => {
+                  console.log(this.props.appId);
                   this.editApp(this.props.appId);
                 }}
                 className="button"
