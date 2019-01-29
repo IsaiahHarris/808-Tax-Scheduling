@@ -58,13 +58,6 @@ class Appointment extends Component {
           <div className="note">
             Note: <div className="desc">{this.props.note}</div>
           </div>
-          <div className="time">
-            Time:{' '}
-            <div className="desc">
-              {this.props.person}
-              {this.props.time}
-            </div>
-          </div>
         </div>
         {this.state.show && (
           <div

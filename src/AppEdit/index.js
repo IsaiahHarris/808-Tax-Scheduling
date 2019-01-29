@@ -51,6 +51,7 @@ class AppEdit extends Component {
                 onChange={this.handleInputChange('nameInput')}
                 placeholder="Name"
                 autoComplete="off"
+                maxLength="30"
               />
             </div>
             <div className="input">
@@ -63,6 +64,7 @@ class AppEdit extends Component {
                 onChange={this.handleInputChange('phoneInput')}
                 placeholder="Phone"
                 autoComplete="off"
+                maxLength="30"
               />
             </div>
             <div className="input">
@@ -75,11 +77,13 @@ class AppEdit extends Component {
                 onChange={this.handleInputChange('subjectInput')}
                 placeholder="Subject"
                 autoComplete="off"
+                maxLength="30"
               />
             </div>
             <div className="input">
               {/* <div className="label">Note:</div> */}
-              <input
+              <textarea
+                maxLength="30"
                 type="text"
                 name="noteInput"
                 id="note"
@@ -97,7 +101,7 @@ class AppEdit extends Component {
                 }}
                 className="button"
               >
-                pencil
+                enter
               </div>
             </div>
           </div>

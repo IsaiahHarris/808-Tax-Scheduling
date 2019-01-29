@@ -21,8 +21,9 @@ class Header extends Component {
       <header className="Header-header">
         {/* <img src={logo} className="Header-logo" alt="logo" /> */}
         <div className="Header-title">808 TAX</div>
+
         <div className="add-task-button" onClick={this.showForm.bind(this)}>
-          <span>➕</span> NEW APPOINTMENT
+          <span>🔍</span> Search Appointment
         </div>
       </header>
     );
