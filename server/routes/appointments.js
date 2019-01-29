@@ -24,24 +24,13 @@ router
   })
   .put((req, res) => {
     const appId = req.params.id;
-    const appInput = {
-      name: req.body.name,
-      phone_number: req.body.phone_number,
-      subject: req.body.subject,
-      note: req.body.note
-    };
-
-    return new Appointment()
-      .where({ id: appId })
-      .save(appInput, { path: true })
+    return new Appointment(req.body)
+      .save()
       .then(response => {
         return response.refresh();
       })
       .then(appointment => {
         return res.json(appointment);
-      })
-      .catch(err => {
-        return res.json({ error: err.message });
       });
   })
   .delete((req, res) => {
@@ -59,4 +48,31 @@ router
       });
   });
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+
+  return new Appointment({ id })
+    .save(
+      {
+        name: req.body.name,
+        phone_number: req.body.number,
+        note: req.body.note,
+        subject: req.body.subject
+      },
+      { patch: true }
+    )
+    .then(response => {
+      return response.refresh();
+    })
+    .then(() => {
+      return Appointment.where({ id })
+        .fetch()
+        .then(appointment => {
+          return res.json(appointment);
+        });
+    })
+    .catch(err => {
+      console.log('error : ', err);
+    });
+});
 module.exports = router;

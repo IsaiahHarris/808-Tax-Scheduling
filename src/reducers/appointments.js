@@ -1,4 +1,4 @@
-import { LOAD_APPOINTMENTS } from '../actions';
+import { LOAD_APPOINTMENTS, EDIT_APP } from '../actions';
 
 const initialState = [
   {
@@ -16,6 +16,9 @@ const appointmentsList = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_APPOINTMENTS:
       return [...action.appointments];
+    case EDIT_APP:
+      let newState = state.filter(appointment => appointment.id !== action.id);
+      return [...newState, action.appointment];
     default:
       return state;
   }
