@@ -7,4 +7,9 @@
   justify-content: flex-start;
   align-items: center;
   border-right: 1px solid grey;
+  .Time {
+    border-bottom: 1px solid grey;
+    width: 91%;
+    padding: 10px;
+  }
 }

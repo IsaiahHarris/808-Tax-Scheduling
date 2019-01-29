@@ -18,7 +18,7 @@ class AppointmentList extends Component {
           return (
             <Appointment
               name={appointment.name}
-              phone={appointment.phone}
+              phone={appointment.phone_number}
               time={appointment.time}
               date={appointment.date}
               subject={appointment.subject}
