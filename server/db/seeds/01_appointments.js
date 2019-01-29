@@ -7,53 +7,113 @@ exports.seed = function(knex, Promise) {
       return knex('appointments').insert([
         {
           id: 1,
-          name: 'John Doe',
-          phone_number: '8085551954',
-          time: '8:30',
-          date: '2/12/19',
-          person: 'jimmy',
-          subject: 'taxes',
-          note: 'wants to do taxes'
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
         },
         {
           id: 2,
-          name: 'John Doe',
-          phone_number: '8085551954',
-          time: '8:30',
-          date: '2/13/19',
-          person: 'walk-in',
-          subject: 'taxes',
-          note: 'wants to do taxes'
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
         },
         {
           id: 3,
-          name: 'John Doe',
-          phone_number: '8085551954',
-          time: '8:30',
-          date: '2/14/19',
-          person: 'jimmy',
-          subject: 'taxes',
-          note: 'wants to do taxes'
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
         },
         {
           id: 4,
-          name: 'John Doe',
-          phone_number: '8085551954',
-          time: '8:30',
-          date: '3/12/19',
-          person: 'walk-in',
-          subject: 'taxes',
-          note: 'wants to do taxes'
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
         },
         {
           id: 5,
-          name: 'John Doe',
-          phone_number: '8085551954',
-          time: '8:30',
-          date: '3/12/19',
-          person: 'bernice',
-          subject: 'taxes',
-          note: 'wants to do taxes'
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 6,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 7,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 8,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 9,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 10,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
+        },
+        {
+          id: 11,
+          name: '',
+          phone_number: '',
+          time: '',
+          date: '',
+          person: '',
+          subject: '',
+          note: ''
         }
       ]);
     });

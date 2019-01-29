@@ -17,6 +17,7 @@ class AppointmentList extends Component {
         {this.props.appointments.map((appointment, i) => {
           return (
             <Appointment
+              key={i}
               name={appointment.name}
               phone={appointment.phone_number}
               time={appointment.time}

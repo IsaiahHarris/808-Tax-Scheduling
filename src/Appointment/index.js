@@ -5,10 +5,18 @@ const Appointment = props => {
   return (
     <div className="appointment-container">
       <div className="appointment">
-        <div className="name">Name: {props.name}</div>
-        <div className="phone">Phone: {props.phone}</div>
-        <div className="subject">Subject: {props.subject}</div>
-        <div className="note">Note: {props.note}</div>
+        <div className="name">
+          Name: <div className="desc">{props.name}</div>
+        </div>
+        <div className="phone">
+          Phone: <div className="desc">{props.phone}</div>
+        </div>
+        <div className="subject">
+          Subject: <div className="desc">{props.subject}</div>
+        </div>
+        <div className="note">
+          Note: <div className="desc">{props.note}</div>
+        </div>
       </div>
     </div>
   );
