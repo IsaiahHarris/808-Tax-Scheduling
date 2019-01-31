@@ -6,7 +6,7 @@ class Appointment extends bookshelf.Model {
   }
 
   get hasTimestamps() {
-    return true;
+    return false;
   }
 }
 

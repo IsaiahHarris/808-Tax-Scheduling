@@ -1,0 +1,13 @@
+.time-list-container {
+  width: 100%;
+  .time {
+    height: 100px;
+    width: 91.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px grey solid;
+    font-size: 24px;
+    padding: 8px;
+  }
+}

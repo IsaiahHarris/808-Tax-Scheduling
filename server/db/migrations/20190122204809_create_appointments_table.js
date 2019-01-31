@@ -8,7 +8,6 @@ exports.up = function(knex, Promise) {
     table.string('person');
     table.string('subject');
     table.string('note');
-    table.timestamps(true, true);
   });
 };
 
