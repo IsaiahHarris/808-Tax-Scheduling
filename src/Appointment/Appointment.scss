@@ -6,13 +6,15 @@
   justify-content: center;
   align-items: center;
 
-  .appointment {
+  .appointment,
+  .colored-appointment {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 5px;
     height: 100%;
+    cursor: pointer;
     .name,
     .phone,
     .subject,
@@ -32,6 +34,9 @@
     .name {
       margin-top: 5px;
     }
+  }
+  .colored-appointment {
+    background-color: rgb(172, 255, 227);
   }
   .modal-container {
     width: 100vw;

@@ -9,6 +9,7 @@ class Appointment extends Component {
 
     this.handleOpen = this.handleOpen.bind(this);
     this.myRef = React.createRef();
+    this.secondRef = React.createRef();
     this.state = {
       show: false,
       id: 0
@@ -33,7 +34,21 @@ class Appointment extends Component {
     const node = this.myRef.current;
     this.setState({ id: node.id });
   }
+
   render() {
+    const node = this.myRef.current;
+    if (
+      !(
+        this.props.name &&
+        this.props.phone &&
+        this.props.subject &&
+        this.props.note
+      ) &&
+      node
+    ) {
+      node.className = 'colored-appointment';
+    }
+
     return (
       <div
         className="appointment-container"
