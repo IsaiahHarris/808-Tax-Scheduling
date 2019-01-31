@@ -1,0 +1,18 @@
+.column-container {
+  width: 29%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: 1px solid grey;
+
+  .Jimmy,
+  .Bernice,
+  .Walk-in {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+  }
+}

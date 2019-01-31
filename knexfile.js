@@ -1,10 +1,11 @@
 // Update with your config settings.
+require('dotenv').config();
 const path = require('path');
 module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'kanban_db',
+      database: process.env.DB_NAME,
       user: process.env.DB_USER,
       password: process.env.DB_PASS
     },
@@ -15,6 +16,10 @@ module.exports = {
     migrations: {
       directory: path.join(__dirname, 'server', 'db', 'migrations'),
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: path.join(__dirname, 'server', 'db', 'seeds'),
+      tableName: 'knex_seeds'
     }
   },
 

@@ -1,0 +1,56 @@
+.Header-logo {
+  display: none;
+}
+
+.Header-header {
+  background-color: #4c525a;
+  height: 6vh;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header-title {
+  margin-left: 10px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+}
+
+.add-task-button {
+  border: 3px white outset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.add-task-button:hover {
+  border: 5px white outset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+.add-task-button:active {
+  border: 3px white inset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+@keyframes Header-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

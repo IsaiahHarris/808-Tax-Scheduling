@@ -1,0 +1,65 @@
+.appointment-container {
+  width: 100%;
+  height: 116px;
+  border-bottom: 1px grey solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .appointment,
+  .colored-appointment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5px;
+    height: 100%;
+    cursor: pointer;
+    .name,
+    .phone,
+    .subject,
+    .note,
+    .time {
+      width: 100%;
+      display: flex;
+      font-size: 16px;
+      margin-top: 10px;
+      overflow-y: scroll;
+      font-weight: 600;
+      .desc {
+        padding-left: 5px;
+        font-weight: 400;
+      }
+    }
+    .name {
+      margin-top: 5px;
+    }
+  }
+  .colored-appointment {
+    background-color: rgb(172, 255, 227);
+  }
+  .modal-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+    background-color: black;
+
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    .modal-content {
+      border-radius: 20px;
+      color: green;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 500px;
+    }
+  }
+}
