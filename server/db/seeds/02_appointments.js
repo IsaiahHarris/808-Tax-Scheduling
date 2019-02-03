@@ -13,7 +13,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 2,
@@ -23,7 +24,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 3,
@@ -33,7 +35,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 4,
@@ -43,7 +46,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 5,
@@ -53,7 +57,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 6,
@@ -63,7 +68,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 7,
@@ -73,7 +79,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 8,
@@ -83,7 +90,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 9,
@@ -93,7 +101,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 10,
@@ -103,7 +112,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 11,
@@ -113,7 +123,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'jimmy',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 1
         },
         {
           id: 12,
@@ -123,7 +134,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 13,
@@ -133,7 +145,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 14,
@@ -143,7 +156,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 15,
@@ -153,7 +167,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 16,
@@ -163,7 +178,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 17,
@@ -173,7 +189,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 18,
@@ -183,7 +200,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 19,
@@ -193,7 +211,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 20,
@@ -203,7 +222,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 21,
@@ -213,7 +233,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 22,
@@ -223,7 +244,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'bernice',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 2
         },
         {
           id: 23,
@@ -233,7 +255,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 24,
@@ -243,7 +266,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 25,
@@ -253,7 +277,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 26,
@@ -263,7 +288,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 27,
@@ -273,7 +299,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 28,
@@ -283,7 +310,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 29,
@@ -293,7 +321,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 30,
@@ -303,7 +332,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 31,
@@ -313,7 +343,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 32,
@@ -323,7 +354,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         },
         {
           id: 33,
@@ -333,7 +365,8 @@ exports.seed = function(knex, Promise) {
           date: '',
           person: 'walkin',
           subject: '',
-          note: ''
+          note: '',
+          date_id: 3
         }
       ]);
     });
