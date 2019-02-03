@@ -1,23 +1,20 @@
-import { LOAD_APPOINTMENT } from '../actions';
+import { LOAD_DATE } from '../actions';
 
 const initialState = [
   {
-    day: 'Wednesday',
+    day: 'Thursday',
     year: '2019',
-    date: 'Feburary 20'
+    date: 'Feburary 21'
   }
 ];
 
 const datesList = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_APPOINTMENT:
-      return [...action.date];
-    case EDIT_APP:
-      let newState = state.filter(appointment => appointment.id !== action.id);
-      return [...newState, action.appointment];
+    case LOAD_DATE:
+      return [action.date];
     default:
       return state;
   }
 };
 
-export default appointmentsList;
+export default datesList;

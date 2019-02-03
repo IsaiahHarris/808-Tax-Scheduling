@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Appointment from '../Appointment';
-import { loadAppointments } from '../actions';
+import { loadDate } from '../actions';
 import './AppointmentList.scss';
 class AppointmentList extends Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
-    this.props.loadAppointments();
+    let date = document.getElementById('date');
+    this.props.loadDate(date.innerHTML);
   }
   render() {
     return (
@@ -33,14 +37,14 @@ class AppointmentList extends Component {
 
 const mapStateToProps = state => {
   return {
-    appointments: state.appointmentsList
+    date: state.datesList
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadAppointments: () => {
-      dispatch(loadAppointments());
+    loadDate: date => {
+      dispatch(loadDate(date));
     }
   };
 };

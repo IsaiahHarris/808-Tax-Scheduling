@@ -12,9 +12,9 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id;
-  return Date.where({ id: id })
+router.get('/:date', (req, res) => {
+  const date = req.params.date;
+  return Date.where({ date: date })
     .fetch({ withRelated: ['appointments'] })
     .then(date => {
       res.json(date);

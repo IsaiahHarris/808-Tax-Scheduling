@@ -17,6 +17,19 @@
   font-size: 30px;
   letter-spacing: 1.5px;
 }
+.header-date {
+  display: flex;
+
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  .day,
+  .date {
+    width: fit-content;
+  }
+  .date {
+    margin-left: 10px;
+  }
+}
 
 .add-task-button {
   border: 3px white outset;
