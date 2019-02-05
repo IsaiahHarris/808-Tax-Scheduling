@@ -25,13 +25,9 @@ class Column extends Component {
 
 function filterApps(label, apps) {
   if (apps) {
-    console.log(apps);
     switch (label) {
       case 'Jimmy':
-        return apps.filter(app => {
-          console.log(app.person);
-          console.log(app.person);
-        });
+        return apps.filter(app => app.person === 'jimmy');
       case 'Bernice':
         return apps.filter(app => app.person === 'bernice');
       case 'Walk-in':
