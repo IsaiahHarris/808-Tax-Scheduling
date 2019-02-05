@@ -96,7 +96,6 @@ class AppEdit extends Component {
             <div className="edit-app-button">
               <div
                 onClick={() => {
-                  console.log(this.props.appId);
                   this.editApp(this.props.appId);
                 }}
                 className="button"

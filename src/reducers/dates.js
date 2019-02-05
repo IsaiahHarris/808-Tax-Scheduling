@@ -1,4 +1,4 @@
-import { LOAD_DATE } from '../actions';
+import { LOAD_DATE, LOAD_DATES } from '../actions';
 
 const initialState = [
   {
@@ -10,6 +10,9 @@ const initialState = [
 
 const datesList = (state = initialState, action) => {
   switch (action.type) {
+    case LOAD_DATES:
+      console.log('dates');
+      return [...action.dates];
     case LOAD_DATE:
       return [action.date];
     default:
