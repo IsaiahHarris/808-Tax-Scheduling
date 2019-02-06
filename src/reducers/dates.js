@@ -11,10 +11,9 @@ const initialState = [
 const datesList = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_DATES:
-      console.log('dates');
       return [...action.dates];
-    case LOAD_DATE:
-      return [action.date];
+    // case LOAD_DATE:
+    //   return [action.date];
     default:
       return state;
   }

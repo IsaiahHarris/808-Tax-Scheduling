@@ -2,20 +2,43 @@ import React, { Component } from 'react';
 import './Column.scss';
 import AppointmentList from '../AppointmentList';
 import { connect } from 'react-redux';
-import { loadDate } from '../actions';
+import { loadDates } from '../actions';
+
 class Column extends Component {
-  componentDidMount() {
-    let date = document.getElementById('date');
-    this.props.loadDate(date.innerHTML);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      appointments: []
+    };
   }
-  render() {
-    let filterFunc = filterApps(
-      this.props.label,
-      this.props.date[0].appointments
+
+  componentDidMount() {
+    this.props.loadDates();
+    this.props.realDate.addEventListener(
+      'DOMSubtreeModified',
+      this.props.loadDates()
     );
+  }
+
+  render() {
+    let dates = [];
+    this.props.dates.map(date => {
+      if (date.appointments) {
+        if (date.appointments.length > 0) {
+          if (date.date === this.props.realDate.innerHTML) {
+            date.appointments.map(app => {
+              return dates.push(app);
+            });
+          }
+        }
+      }
+    });
+
+    let filterFunc = filterApps(this.props.label, dates);
 
     return (
-      <div className="column-container">
+      <div ref="column" className="column-container">
         <div className={this.props.label}>{this.props.label}</div>
         <AppointmentList apps={filterFunc} />
       </div>
@@ -40,14 +63,14 @@ function filterApps(label, apps) {
 
 const mapStateToProps = state => {
   return {
-    date: state.datesList
+    dates: state.datesList
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadDate: date => {
-      dispatch(loadDate(date));
+    loadDates: () => {
+      dispatch(loadDates());
     }
   };
 };

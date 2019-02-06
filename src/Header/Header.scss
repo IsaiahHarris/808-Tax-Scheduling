@@ -22,20 +22,25 @@
   align-items: center;
   font-size: 30px;
   letter-spacing: 1.5px;
-  .date {
-    width: fit-content;
-    height: 100%;
-  }
-  .day {
-    width: fit-content;
-    height: 100%;
-  }
-  .date {
-    margin-left: 10px;
-  }
-  .year {
-    height: 100%;
-    width: fit-content;
+  .time {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    .date {
+      width: fit-content;
+      height: 100%;
+    }
+    .day {
+      width: fit-content;
+      height: 100%;
+    }
+    .date {
+      margin-left: 10px;
+    }
+    .year {
+      height: 100%;
+      width: fit-content;
+    }
   }
 }
 

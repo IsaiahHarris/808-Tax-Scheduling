@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import Appointment from '../Appointment';
-import { loadDate } from '../actions';
+
 import './AppointmentList.scss';
 
 class AppointmentList extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    let date = document.getElementById('date');
-    this.props.loadDate(date.innerHTML);
-  }
+
   render() {
     return (
       <div className="appointment-list-container">
@@ -38,21 +35,4 @@ class AppointmentList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    date: state.datesList
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    loadDate: date => {
-      dispatch(loadDate(date));
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AppointmentList);
+export default AppointmentList;
