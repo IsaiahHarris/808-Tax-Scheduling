@@ -11,6 +11,7 @@ class Header extends Component {
       index: 1
     };
     this.changeIndex = this.changeIndex.bind(this);
+    this.findDay = this.findDay.bind(this);
   }
   componentDidMount() {
     this.props.loadDates();
@@ -33,9 +34,36 @@ class Header extends Component {
         index: 1
       });
     }
+    if (this.state.index >= 32) {
+      this.setState({
+        index: 31
+      });
+    }
+  }
+
+  findDay() {
+    switch (this.state.index) {
+      case 1 || 8 || 15 || 22 || 29:
+        return 'Friday';
+      case 2 || 9 || 16 || 23 || 30:
+        return 'Saturday';
+      case 3 || 10 || 17 || 24 || 31:
+        return 'Sunday';
+      case 4 || 11 || 18 || 25:
+        return 'Monday';
+      case 5 || 12 || 19 || 26:
+        return 'Tuesday';
+      case 6 || 13 || 20 || 27:
+        return 'Wednesday';
+      case 7 || 14 || 21 || 28:
+        return 'Thursday';
+      default:
+        break;
+    }
   }
 
   render() {
+    console.log(this.props.dates);
     return (
       <header className="Header-header">
         <div className="Header-title">808 TAX</div>
@@ -48,21 +76,13 @@ class Header extends Component {
             aria-hidden="true"
           />
           <div className="time">
-            {this.props.dates[this.state.index] && (
-              <div className="day">
-                {this.props.dates[this.state.index].day}
-              </div>
-            )}
+            <div className="day">{this.findDay()}</div>
 
             <div id="date" ref="date" className="date">
               March {this.state.index}
             </div>
 
-            {this.props.dates[this.state.index] && (
-              <div className="year">
-                , {this.props.dates[this.state.index].year}
-              </div>
-            )}
+            <div className="year">, 2019</div>
           </div>
 
           <i

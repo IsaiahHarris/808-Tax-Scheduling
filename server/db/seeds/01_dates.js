@@ -34,8 +34,8 @@ exports.seed = function(knex, Promise) {
         { id: 27, date: 'March 27', day: 'Wednesday', year: '2019' },
         { id: 28, date: 'March 28', day: 'Thursday', year: '2019' },
         { id: 29, date: 'March 29', day: 'Friday', year: '2019' },
-        { id: 30, date: 'March 30', day: 'Satuday', year: '2019' },
-        { id: 31, date: 'March 30', day: 'Sunday', year: '2019' }
+        { id: 30, date: 'March 30', day: 'Saturday', year: '2019' },
+        { id: 31, date: 'March 31', day: 'Sunday', year: '2019' }
       ]);
     });
 };

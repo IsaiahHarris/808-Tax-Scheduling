@@ -32,26 +32,18 @@ class Appointment extends Component {
   };
 
   componentDidMount() {
-    this.setState({ id: document.getElementById('container').id });
+    this.setState({ id: this.refs.container.id });
   }
 
   render() {
     let note = document.getElementById('note');
-    let phone = document.getElementById('phone');
-    let name = document.getElementById('name');
-    let subject = document.getElementById('subject');
-    let container = document.getElementById('container');
-    if (note && phone && name && subject) {
-      console.log(note.innerHTML.length > 0);
-      if (
-        !(
-          note.innerHTML.length < 1 &&
-          name.innerHTML.length < 1 &&
-          phone.innerHTML.length < 1 &&
-          subject.innerHTML.length < 1
-        )
-      ) {
-        container.className = 'colored-appointment';
+    let phone = this.refs.phone ? this.refs.phone : null;
+    let name = this.refs.name ? this.refs.name : null;
+
+    let container = this.refs.container ? this.refs.container : null;
+    if (phone && name) {
+      if (name.innerHTML.length < 1 && phone.innerHTML.length < 1 && true) {
+        container.style.backgroundColor = 'rgb(172, 255, 227)';
       }
     }
 
@@ -61,11 +53,12 @@ class Appointment extends Component {
         onClick={() => {
           this.handleOpen();
         }}
+        ref="container"
       >
-        <div className="appointment" id={this.props.appId || 16} id="container">
+        <div className="appointment" id={Number(this.props.appId) || 16}>
           <div className="name">
             Name:
-            <div id="name" ref="desc" className="desc">
+            <div id="name" ref="name" className="desc">
               {this.props.name}
             </div>
           </div>
@@ -95,7 +88,7 @@ class Appointment extends Component {
             onClick={this.handleClose}
           >
             <div id="modal-content" className="modal-content">
-              <AppEdit appId={this.state.id} close={this.handleClose} />
+              <AppEdit appId={this.props.appId} close={this.handleClose} />
             </div>
           </div>
         )}

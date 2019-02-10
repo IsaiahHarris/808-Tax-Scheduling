@@ -27,9 +27,6 @@ class Column extends Component {
       if (appDate.appointments) {
         appDate.appointments.map(app => {
           apps.push(app);
-          // if (app.date === this.props.realDate.innerHTML) {
-          //   return app;
-          // }
         });
       }
     }
