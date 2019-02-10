@@ -32,24 +32,26 @@ class Appointment extends Component {
   };
 
   componentDidMount() {
-    this.setState({ id: this.refs.container.id });
+    this.setState({ id: document.getElementById('container').id });
   }
 
   render() {
-    let desc = document.getElementById('desc');
+    let note = document.getElementById('note');
     let phone = document.getElementById('phone');
     let name = document.getElementById('name');
     let subject = document.getElementById('subject');
-
-    if (desc || phone || name || subject) {
-      console.log(desc.innerHTML);
+    let container = document.getElementById('container');
+    if (note && phone && name && subject) {
+      console.log(note.innerHTML.length > 0);
       if (
-        desc.innerHTML &&
-        phone.innerHTML &&
-        name.innerHTML &&
-        subject.innerHTML
+        !(
+          note.innerHTML.length < 1 &&
+          name.innerHTML.length < 1 &&
+          phone.innerHTML.length < 1 &&
+          subject.innerHTML.length < 1
+        )
       ) {
-        this.refs.container.className = 'colored-appointment';
+        container.className = 'colored-appointment';
       }
     }
 
@@ -60,32 +62,28 @@ class Appointment extends Component {
           this.handleOpen();
         }}
       >
-        <div
-          className="appointment"
-          id={this.props.appId || 16}
-          ref="container"
-        >
+        <div className="appointment" id={this.props.appId || 16} id="container">
           <div className="name">
             Name:
-            <div id="desc" ref="desc" className="desc">
+            <div id="name" ref="desc" className="desc">
               {this.props.name}
             </div>
           </div>
           <div className="phone">
             Phone:
-            <div ref="phone" className="desc">
+            <div id="phone" ref="phone" className="desc">
               {this.props.phone}
             </div>
           </div>
           <div className="subject">
             Subject:
-            <div ref="subject" className="desc">
+            <div id="subject" ref="subject" className="desc">
               {this.props.subject}
             </div>
           </div>
           <div className="note">
             Note:
-            <div ref="note" className="desc">
+            <div id="note" ref="note" className="desc">
               {this.props.note}
             </div>
           </div>
