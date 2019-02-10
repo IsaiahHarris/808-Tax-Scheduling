@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Column.scss';
 import AppointmentList from '../AppointmentList';
 import { connect } from 'react-redux';
-import { loadDates } from '../actions';
+import { loadDates, loadDate } from '../actions';
 
 class Column extends Component {
   constructor(props) {
@@ -14,28 +14,27 @@ class Column extends Component {
   }
 
   componentDidMount() {
-    this.props.loadDates();
-    this.props.realDate.addEventListener(
-      'DOMSubtreeModified',
-      this.props.loadDates()
-    );
+    this.props.realDate.addEventListener('DOMCharacterDataModified', () => {
+      this.props.loadDate(this.props.realDate.innerHTML);
+    });
   }
 
   render() {
-    let dates = [];
-    this.props.dates.map(date => {
-      if (date.appointments) {
-        if (date.appointments.length > 0) {
-          if (date.date === this.props.realDate.innerHTML) {
-            date.appointments.map(app => {
-              return dates.push(app);
-            });
-          }
-        }
-      }
-    });
+    let apps = [];
+    const appDate = this.props.date[0];
 
-    let filterFunc = filterApps(this.props.label, dates);
+    if (appDate.appointments && appDate.appointments.length > 0) {
+    }
+    if (appDate.appointments) {
+      appDate.appointments.map(app => {
+        apps.push(app);
+        // if (app.date === this.props.realDate.innerHTML) {
+        //   return app;
+        // }
+      });
+    }
+
+    let filterFunc = filterApps(this.props.label, apps);
 
     return (
       <div ref="column" className="column-container">
@@ -63,7 +62,8 @@ function filterApps(label, apps) {
 
 const mapStateToProps = state => {
   return {
-    dates: state.datesList
+    dates: state.datesList,
+    date: state.datesList
   };
 };
 
@@ -71,6 +71,9 @@ const mapDispatchToProps = dispatch => {
   return {
     loadDates: () => {
       dispatch(loadDates());
+    },
+    loadDate: date => {
+      dispatch(loadDate(date));
     }
   };
 };

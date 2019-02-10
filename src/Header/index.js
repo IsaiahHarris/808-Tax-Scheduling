@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadDates } from '../actions';
+import { loadDates, loadDate } from '../actions';
 import './Header.scss';
 
 class Header extends Component {
@@ -14,6 +14,7 @@ class Header extends Component {
   }
   componentDidMount() {
     this.props.loadDates();
+
     this.props.passRefUpward(this.refs);
   }
 
@@ -30,6 +31,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log('dates', this.props.dates);
     return (
       <header className="Header-header">
         <div className="Header-title">808 TAX</div>
@@ -89,6 +91,9 @@ const mapDispatchToProps = dispatch => {
   return {
     loadDates: () => {
       dispatch(loadDates());
+    },
+    loadDate: date => {
+      dispatch(loadDate(date));
     }
   };
 };
