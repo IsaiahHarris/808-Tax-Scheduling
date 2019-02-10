@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Appointment = require('../db/models/Appointment');
+
 router.route('/').get((req, res) => {
   return Appointment.fetchAll().then(appointment => {
     return res.json(appointment);
@@ -11,10 +12,9 @@ router
   .route('/:id')
   .get((req, res) => {
     const appId = req.params.id;
-
     return new Appointment()
       .where({ id: appId })
-      .fetch()
+      .fetch({ withRelated: ['date'] })
       .then(appointment => {
         return res.json(appointment);
       })
@@ -50,7 +50,6 @@ router
 
 router.put('/:id', (req, res) => {
   const id = Number(req.params.id);
-
   return new Appointment({ id })
     .save(
       {

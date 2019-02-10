@@ -8,6 +8,10 @@ class Appointment extends bookshelf.Model {
   get hasTimestamps() {
     return false;
   }
+
+  date() {
+    return this.belongsTo('Date', 'date_id');
+  }
 }
 
 module.exports = bookshelf.model('Appointment', Appointment);

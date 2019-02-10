@@ -17,6 +17,32 @@
   font-size: 30px;
   letter-spacing: 1.5px;
 }
+.header-date {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  .time {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    .date {
+      width: fit-content;
+      height: 100%;
+    }
+    .day {
+      width: fit-content;
+      height: 100%;
+    }
+    .date {
+      margin-left: 10px;
+    }
+    .year {
+      height: 100%;
+      width: fit-content;
+    }
+  }
+}
 
 .add-task-button {
   border: 3px white outset;
@@ -46,11 +72,15 @@
   text-align: center;
   margin-right: 10px;
 }
-@keyframes Header-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.fa {
+  color: red;
+  height: 100%;
+}
+
+.fa-arrow-right {
+  margin-left: 20px;
+}
+.fa-arrow-left {
+  margin-right: 20px;
 }

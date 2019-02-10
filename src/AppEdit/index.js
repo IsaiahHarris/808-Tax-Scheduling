@@ -33,8 +33,6 @@ class AppEdit extends Component {
     };
 
     this.props.editApp(data);
-    this.props.loadAppointments();
-    window.location.reload();
   }
   render() {
     return (
@@ -96,10 +94,11 @@ class AppEdit extends Component {
             <div className="edit-app-button">
               <div
                 onClick={() => {
-                  console.log(this.props.appId);
                   this.editApp(this.props.appId);
+                  this.props.close('click');
                 }}
                 className="button"
+                id="enter"
               >
                 enter
               </div>

@@ -23,7 +23,8 @@ class Appointment extends Component {
 
   handleClose = event => {
     if (
-      event.target === document.getElementById('modal-container') &&
+      (event.target === document.getElementById('modal-container') ||
+        event.target === document.getElementById('enter')) &&
       this.state.show
     ) {
       this.setState({ show: false });
@@ -31,22 +32,19 @@ class Appointment extends Component {
   };
 
   componentDidMount() {
-    const node = this.myRef.current;
-    this.setState({ id: node.id });
+    this.setState({ id: this.refs.container.id });
   }
 
   render() {
-    const node = this.myRef.current;
-    if (
-      !(
-        this.props.name &&
-        this.props.phone &&
-        this.props.subject &&
-        this.props.note
-      ) &&
-      node
-    ) {
-      node.className = 'colored-appointment';
+    let note = document.getElementById('note');
+    let phone = this.refs.phone ? this.refs.phone : null;
+    let name = this.refs.name ? this.refs.name : null;
+
+    let container = this.refs.container ? this.refs.container : null;
+    if (phone && name) {
+      if (name.innerHTML.length < 1 && phone.innerHTML.length < 1 && true) {
+        container.style.backgroundColor = 'rgb(172, 255, 227)';
+      }
     }
 
     return (
@@ -55,23 +53,32 @@ class Appointment extends Component {
         onClick={() => {
           this.handleOpen();
         }}
+        ref="container"
       >
-        <div
-          className="appointment"
-          id={this.props.appId || 16}
-          ref={this.myRef}
-        >
+        <div className="appointment" id={Number(this.props.appId) || 16}>
           <div className="name">
-            Name: <div className="desc">{this.props.name}</div>
+            Name:
+            <div id="name" ref="name" className="desc">
+              {this.props.name}
+            </div>
           </div>
           <div className="phone">
-            Phone: <div className="desc">{this.props.phone}</div>
+            Phone:
+            <div id="phone" ref="phone" className="desc">
+              {this.props.phone}
+            </div>
           </div>
           <div className="subject">
-            Subject: <div className="desc">{this.props.subject}</div>
+            Subject:
+            <div id="subject" ref="subject" className="desc">
+              {this.props.subject}
+            </div>
           </div>
           <div className="note">
-            Note: <div className="desc">{this.props.note}</div>
+            Note:
+            <div id="note" ref="note" className="desc">
+              {this.props.note}
+            </div>
           </div>
         </div>
         {this.state.show && (
@@ -81,7 +88,7 @@ class Appointment extends Component {
             onClick={this.handleClose}
           >
             <div id="modal-content" className="modal-content">
-              <AppEdit appId={this.state.id} />
+              <AppEdit appId={this.props.appId} close={this.handleClose} />
             </div>
           </div>
         )}

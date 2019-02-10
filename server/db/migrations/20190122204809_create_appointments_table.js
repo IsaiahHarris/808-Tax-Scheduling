@@ -8,6 +8,10 @@ exports.up = function(knex, Promise) {
     table.string('person');
     table.string('subject');
     table.string('note');
+    table
+      .integer('date_id')
+      .references('dates.id')
+      .notNullable();
   });
 };
 
