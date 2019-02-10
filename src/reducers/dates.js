@@ -2,9 +2,9 @@ import { LOAD_DATE, LOAD_DATES } from '../actions';
 
 const initialState = [
   {
-    day: 'Thursday',
+    day: 'Saturday',
     year: '2019',
-    date: 'Feburary 21'
+    date: 'March 1'
   }
 ];
 
@@ -13,7 +13,7 @@ const datesList = (state = initialState, action) => {
     case LOAD_DATES:
       return [...action.dates];
     case LOAD_DATE:
-      return [...state, action.date];
+      return [action.date];
     default:
       return state;
   }

@@ -8,13 +8,12 @@ class Header extends Component {
     super(props);
 
     this.state = {
-      index: 0
+      index: 1
     };
     this.changeIndex = this.changeIndex.bind(this);
   }
   componentDidMount() {
     this.props.loadDates();
-
     this.props.passRefUpward(this.refs);
   }
 
@@ -28,10 +27,15 @@ class Header extends Component {
         index: this.state.index + 1
       });
     }
+
+    if (this.state.index <= 0) {
+      this.setState({
+        index: 1
+      });
+    }
   }
 
   render() {
-    console.log('dates', this.props.dates);
     return (
       <header className="Header-header">
         <div className="Header-title">808 TAX</div>
@@ -50,14 +54,10 @@ class Header extends Component {
               </div>
             )}
 
-            {this.props.dates[this.state.index] && (
-              <div id="date" ref="date" className="date">
-                {this.props.dates[this.state.index].date}
-              </div>
-            )}
-            {!this.props.dates[this.state.index] && (
-              <div className="date">not available</div>
-            )}
+            <div id="date" ref="date" className="date">
+              March {this.state.index}
+            </div>
+
             {this.props.dates[this.state.index] && (
               <div className="year">
                 , {this.props.dates[this.state.index].year}

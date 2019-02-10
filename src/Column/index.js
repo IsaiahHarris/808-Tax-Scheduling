@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Column.scss';
 import AppointmentList from '../AppointmentList';
 import { connect } from 'react-redux';
-import { loadDates, loadDate } from '../actions';
+import { loadDate } from '../actions';
 
 class Column extends Component {
   constructor(props) {
@@ -23,15 +23,15 @@ class Column extends Component {
     let apps = [];
     const appDate = this.props.date[0];
 
-    if (appDate.appointments && appDate.appointments.length > 0) {
-    }
-    if (appDate.appointments) {
-      appDate.appointments.map(app => {
-        apps.push(app);
-        // if (app.date === this.props.realDate.innerHTML) {
-        //   return app;
-        // }
-      });
+    if (appDate) {
+      if (appDate.appointments) {
+        appDate.appointments.map(app => {
+          apps.push(app);
+          // if (app.date === this.props.realDate.innerHTML) {
+          //   return app;
+          // }
+        });
+      }
     }
 
     let filterFunc = filterApps(this.props.label, apps);
@@ -39,7 +39,11 @@ class Column extends Component {
     return (
       <div ref="column" className="column-container">
         <div className={this.props.label}>{this.props.label}</div>
-        <AppointmentList apps={filterFunc} />
+        <AppointmentList
+          apps={filterFunc.sort((a, b) => {
+            return a.time - b.time;
+          })}
+        />
       </div>
     );
   }
@@ -62,16 +66,12 @@ function filterApps(label, apps) {
 
 const mapStateToProps = state => {
   return {
-    dates: state.datesList,
     date: state.datesList
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadDates: () => {
-      dispatch(loadDates());
-    },
     loadDate: date => {
       dispatch(loadDate(date));
     }

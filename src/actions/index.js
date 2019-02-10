@@ -33,7 +33,6 @@ export const loadDates = () => {
 };
 
 export const loadDate = date => {
-  console.log(date);
   return dispatch => {
     return axios.get(`/api/dates/${date}`).then(response => {
       dispatch({ type: LOAD_DATE, date: response.data });
