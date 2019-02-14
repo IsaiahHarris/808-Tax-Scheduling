@@ -36,17 +36,6 @@ class Appointment extends Component {
   }
 
   render() {
-    let note = document.getElementById('note');
-    let phone = this.refs.phone ? this.refs.phone : null;
-    let name = this.refs.name ? this.refs.name : null;
-
-    let container = this.refs.container ? this.refs.container : null;
-    if (phone && name) {
-      if (name.innerHTML.length < 1 && phone.innerHTML.length < 1 && true) {
-        container.style.backgroundColor = 'rgb(172, 255, 227)';
-      }
-    }
-
     return (
       <div
         className="appointment-container"

@@ -33,6 +33,7 @@ class AppEdit extends Component {
     };
 
     this.props.editApp(data);
+    window.location.reload();
   }
   render() {
     return (
