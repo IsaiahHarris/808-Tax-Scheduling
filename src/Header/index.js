@@ -93,7 +93,10 @@ class Header extends Component {
             aria-hidden="true"
           />
         </div>
-        <div className="add-task-button">
+        <div
+          className="add-task-button"
+          onClick={this.props.sideBarClickHandler}
+        >
           <span>🔍</span> Search Appointment
         </div>
       </header>
