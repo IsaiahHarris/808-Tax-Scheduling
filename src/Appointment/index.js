@@ -57,12 +57,7 @@ class Appointment extends Component {
               {this.props.phone}
             </div>
           </div>
-          <div className="subject">
-            Subject:
-            <div id="subject" ref="subject" className="desc">
-              {this.props.subject}
-            </div>
-          </div>
+
           <div className="note">
             Note:
             <div id="note" ref="note" className="desc">

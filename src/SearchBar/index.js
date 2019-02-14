@@ -11,11 +11,6 @@ const SearchBar = props => {
       <div className="header">
         <div className="close" onClick={props.click} />
       </div>
-      <div className="links">
-        <Link to="/detail" className="link-1" onClick={props.click}>
-          Home
-        </Link>
-      </div>
     </div>
   );
 };

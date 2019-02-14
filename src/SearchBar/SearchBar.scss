@@ -59,7 +59,7 @@
     .lin:hover,
     .lin:active {
       padding-bottom: 8px;
-      border-bottom: 2px solid lightgreen;
+      border-bottom: 2px solid #4c525a;
     }
   }
 }
@@ -95,7 +95,7 @@
       height: 38px;
       width: 3px;
     }
-    background-color: lightgreen;
+    background-color: red;
   }
   .close:before {
     transform: rotate(45deg);

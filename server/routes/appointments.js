@@ -11,9 +11,9 @@ router.route('/').get((req, res) => {
 router
   .route('/:id')
   .get((req, res) => {
-    const appId = req.params.id;
+    const phone = req.body.phone;
     return new Appointment()
-      .where({ id: appId })
+      .where({ phone: phone })
       .fetch({ withRelated: ['date'] })
       .then(appointment => {
         return res.json(appointment);
@@ -48,6 +48,7 @@ router
       });
   });
 
+router.get('/:id', (req, res) => {});
 router.put('/:id', (req, res) => {
   const id = Number(req.params.id);
   return new Appointment({ id })
@@ -55,8 +56,7 @@ router.put('/:id', (req, res) => {
       {
         name: req.body.name,
         phone_number: req.body.number,
-        note: req.body.note,
-        subject: req.body.subject
+        note: req.body.note
       },
       { patch: true }
     )

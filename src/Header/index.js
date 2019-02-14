@@ -63,7 +63,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props.dates);
     return (
       <header className="Header-header">
         <div className="Header-title">808 TAX</div>
