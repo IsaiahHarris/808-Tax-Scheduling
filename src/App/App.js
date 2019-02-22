@@ -11,14 +11,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      realDate: ''
+      realDate: '',
+      month: ''
     };
     this.getRefsFromChild = this.getRefsFromChild.bind(this);
   }
 
   getRefsFromChild(childRefs) {
     this.setState({
-      realDate: childRefs.date
+      realDate: childRefs.date,
+      month: childRefs.month
     });
   }
   toggleSideBar = () => {
@@ -51,6 +53,7 @@ class App extends Component {
           {this.state.realDate && (
             <Column
               realDate={this.state.realDate}
+              month={this.state.month}
               className="jimmy-column"
               label="Jimmy"
             />
@@ -58,6 +61,7 @@ class App extends Component {
           {this.state.realDate && (
             <Column
               realDate={this.state.realDate}
+              month={this.state.month}
               className="bernice-column"
               label="Bernice"
             />
@@ -65,6 +69,7 @@ class App extends Component {
           {this.state.realDate && (
             <Column
               realDate={this.state.realDate}
+              month={this.state.month}
               className="walkin-column"
               label="Walk-in"
             />
