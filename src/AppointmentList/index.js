@@ -21,11 +21,7 @@ class AppointmentList extends Component {
                   appId={appointment.id}
                   name={appointment.name}
                   phone={appointment.phone_number}
-                  time={appointment.time}
-                  date={appointment.date}
-                  subject={appointment.subject}
                   note={appointment.note}
-                  person={appointment.person}
                 />
               );
             }

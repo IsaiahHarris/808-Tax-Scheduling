@@ -19,6 +19,10 @@ class Column extends Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.realDate.removeEventListener('DOMCharacterDataModified');
+  }
+
   render() {
     let apps = [];
     const appDate = this.props.date[0];

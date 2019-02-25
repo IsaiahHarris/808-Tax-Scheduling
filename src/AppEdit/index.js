@@ -9,8 +9,7 @@ class AppEdit extends Component {
     this.state = {
       nameInput: '',
       phoneInput: '',
-      noteInput: '',
-      subjectInput: ''
+      noteInput: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
 
@@ -24,15 +23,20 @@ class AppEdit extends Component {
   };
 
   editApp(id) {
+    let phoneNumber = this.state.phoneInput.trim();
+    phoneNumber = phoneNumber.replace(/\s/g, '');
+    var number = phoneNumber.match(/\d/g);
+    number = number.join('');
+    console.log(number);
     const data = {
       id: id,
       name: this.state.nameInput,
-      phone_number: this.state.phoneInput,
-      note: this.state.noteInput,
-      subject: this.state.subjectInput
+      phone_number: number,
+      note: this.state.noteInput
     };
 
     this.props.editApp(data);
+    window.location.reload();
   }
   render() {
     return (
@@ -40,7 +44,6 @@ class AppEdit extends Component {
         {true && (
           <div className="item-edit-form">
             <div className="input">
-              {/* <div className="label">Name:</div> */}
               <input
                 type="text"
                 name="nameInput"
@@ -61,19 +64,6 @@ class AppEdit extends Component {
                 value={this.state.phoneInput}
                 onChange={this.handleInputChange('phoneInput')}
                 placeholder="Phone"
-                autoComplete="off"
-                maxLength="30"
-              />
-            </div>
-            <div className="input">
-              {/* <div className="label">Subject:</div> */}
-              <input
-                type="text"
-                name="subjectInput"
-                id="subject"
-                value={this.state.subjectInput}
-                onChange={this.handleInputChange('subjectInput')}
-                placeholder="Subject"
                 autoComplete="off"
                 maxLength="30"
               />
